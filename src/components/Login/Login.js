@@ -8,16 +8,20 @@ import './Login.css';
 import swal from 'sweetalert';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useHistory, useLocation } from 'react-router';
 const Login = () => {
     const auth = getAuth();
     const { allFirebase } = useAuth();
     const { setIsLoading } = allFirebase;
-
+    const history = useHistory();
+    const location = useLocation();
+    const reDirect_url = location.state?.from || '/home';
     const handleGoogleLogin = () => {
         setIsLoading(true)
         const googleProvider = new GoogleAuthProvider();
         signInWithPopup(auth, googleProvider)
             .then((result) => {
+                history.push(reDirect_url);
                 swal("Good job!", "Logout Successfully!", "success");
             })
             .catch((error) => {

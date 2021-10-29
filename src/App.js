@@ -10,6 +10,7 @@ import Login from './components/Login/Login';
 import AuthProvider from './contexts/AuthProvider';
 import MyPackage from './components/MyPackage/MyPackage';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AddPackage from './components/AddPackage/AddPackage';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <PrivateRoute path="/my-package">
             <MyPackage></MyPackage>
+          </PrivateRoute>
+          <PrivateRoute path="/add-package">
+            <AddPackage></AddPackage>
           </PrivateRoute>
         </Switch>
       </Router>

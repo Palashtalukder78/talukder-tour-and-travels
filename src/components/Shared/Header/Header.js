@@ -45,6 +45,11 @@ const Header = () => {
                         </NavLink>
                         {user?.photoURL ?
                             <div style={{ display: "flex", alignItems: "center" }}>
+                                <NavLink style={{ marginLeft: "23px", textDecoration: "none", color: "gray", fontSize: "16px" }} to="/add-package" activeStyle={{
+                                    fontWeight: "bold",
+                                }} >
+                                    Add Package
+                                </NavLink>
                                 <img className="img-fluid" style={{ width: "40px", height: "40px", borderRadius: "50%", marginLeft: "23px" }} src={user?.photoURL} alt="" />
                                 <i onClick={handleLogout} title="Logout" style={{ marginLeft: "23px", fontSize: "20px", backgroundColor: "blue", padding: "7px", color: "#fff", borderRadius: "20%", cursor: "pointer" }} class="fas fa-sign-out-alt"></i>
                             </div>
