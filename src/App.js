@@ -1,10 +1,26 @@
 import './App.css';
-import Button from 'react-bootstrap/Button'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import Header from './components/Shared/Header/Header';
+import Home from './components/Home/Home/Home';
+
 function App() {
   return (
-    <div className="App">
-      <h1>ASSIGNMENT 11</h1>
-      <Button variant="primary">Primary</Button>
+    <div>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

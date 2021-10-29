@@ -1,0 +1,10 @@
+.banner{
+    background-image: url('../../../images/banner1\ \(1\).jpg');
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.banner-content{
+    height: 500px;
+}
