@@ -1,0 +1,21 @@
+.register-form{
+    background-color: rgb(117, 117, 187);
+    padding:  30px;
+    border-radius: 15px;
+}
+.register-form input{
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.user-info{
+    background-color: rgb(219, 193, 193);
+    padding: 15px;
+}
+.package-info{
+    background-color: rgb(197, 165, 165);
+    padding: 15px;
+}

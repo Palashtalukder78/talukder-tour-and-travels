@@ -11,6 +11,8 @@ import AuthProvider from './contexts/AuthProvider';
 import MyPackage from './components/MyPackage/MyPackage';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddPackage from './components/AddPackage/AddPackage';
+import Register from './components/Register/Register';
+import ManagePackages from './components/ManagePackages/ManagePackages';
 
 function App() {
   return (
@@ -32,6 +34,12 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/add-package">
             <AddPackage></AddPackage>
+          </PrivateRoute>
+          <PrivateRoute path="/register/:id">
+            <Register></Register>
+          </PrivateRoute>
+          <PrivateRoute path="/manage-packages">
+            <ManagePackages></ManagePackages>
           </PrivateRoute>
         </Switch>
       </Router>

@@ -24,7 +24,7 @@ const AddPackage = () => {
         const description = descriptionRef.current.value;
         const newPackage = { title: title, photo: photo, place: place, duration: duration, description: description };
 
-        fetch('http://fathomless-anchorage-91551.herokuapp.com/add-package', {
+        fetch('https://fathomless-anchorage-91551.herokuapp.com/packages', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
