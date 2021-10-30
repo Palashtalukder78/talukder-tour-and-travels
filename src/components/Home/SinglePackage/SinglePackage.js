@@ -7,7 +7,7 @@ const SinglePackage = ({ singlePackage }) => {
         <div className="col-md-4 my-3">
             <div className="p-2 single-package p-4">
                 <div>
-                    <img style={{ width: "100%", height: "100%", borderRadius: "20px" }} className="img-fluid" src={photo} alt="" />
+                    <img style={{ width: "100%", height: "300px", borderRadius: "20px" }} className="img-fluid" src={photo} alt="" />
                 </div>
                 <div className="my-2">
                     <h4>{title}</h4>

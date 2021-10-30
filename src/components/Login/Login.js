@@ -22,7 +22,7 @@ const Login = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 history.push(reDirect_url);
-                swal("Good job!", "Logout Successfully!", "success");
+                swal("Good job!", "Login Successfully!", "success");
             })
             .catch((error) => {
                 console.log("Kono Genjam ase");

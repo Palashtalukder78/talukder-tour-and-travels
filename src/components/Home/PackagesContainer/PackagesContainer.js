@@ -9,7 +9,7 @@ const PackagesContainer = () => {
     return (
         <div>
             <div className="container my-4">
-                <h1 className="text-center section-title">Packages</h1>
+                <h3 className="text-center section-title my-3">PACKAGES</h3>
                 <div className="row">
                     {!packages.length > 0 ?
                         <div className="text-center my-spinner">

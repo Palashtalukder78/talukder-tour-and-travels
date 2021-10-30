@@ -4,6 +4,7 @@ import './MyPackage.css';
 import swal from 'sweetalert';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Spinner } from 'react-bootstrap';
 const MyPackage = () => {
     const { allFirebase, allRegisteredTourist } = useAuth();
     const { user } = allFirebase;
@@ -33,9 +34,13 @@ const MyPackage = () => {
     }
     return (
         <div className="container">
-            <div className="row my-4">
+            <div className="row my-4" data-aos="fade-down" data-aos-delay="500">
                 <h3 className="text-center">My Packages: {myPackages.length}</h3>
-                {
+                {!myPackages.length < 0 ?
+                    <div className="text-center my-spinner">
+                        <Spinner animation="border" variant="primary" />
+                    </div>
+                    :
                     myPackages.map(singlePackage => (
                         <div className="col-md-4 my-2" data-aos="fade-down" data-aos-delay="500">
                             <div className="my-single-package shadow">
@@ -55,7 +60,7 @@ const MyPackage = () => {
                     ))
                 }
             </div>
-        </div>
+        </div >
     );
 };
 

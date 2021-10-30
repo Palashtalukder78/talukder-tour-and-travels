@@ -55,6 +55,7 @@ const Header = () => {
                             }} >
                                 MANAGE  PACKAGES
                             </NavLink>}
+
                         {user?.photoURL ?
                             <div style={{ display: "flex", alignItems: "center" }}>
                                 <img className="img-fluid" style={{ width: "40px", height: "40px", borderRadius: "50%", marginLeft: "23px" }} src={user?.photoURL} alt="" />

@@ -1,0 +1,22 @@
+.single-organizer{
+    display: flex;
+    border: 1px solid rgb(224, 218, 218);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(237, 243, 243);
+}
+.single-organizer-content{
+    padding:  0 15px;
+}
+.single-organizer-content i{
+    font-size: 32px;
+    margin-right:10px;
+    color: blue;
+}
+.single-organizer-photo img{
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+}

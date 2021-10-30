@@ -1,6 +1,7 @@
 import React from 'react';
 import { createContext } from 'react';
 import useFirebase from '../hooks/useFirebase';
+import useOrganizer from '../hooks/useOrganizer';
 import usePackage from '../hooks/usePackage';
 import useRegisteredTourist from '../hooks/useRegisteredTourist';
 
@@ -9,8 +10,9 @@ const AuthProvider = ({ children }) => {
     const allFirebase = useFirebase();
     const allPackage = usePackage();
     const allRegisteredTourist = useRegisteredTourist();
+    const allOrganizer = useOrganizer();
     return (
-        <AuthContext.Provider value={{ allFirebase, allPackage, allRegisteredTourist }}>
+        <AuthContext.Provider value={{ allFirebase, allPackage, allRegisteredTourist, allOrganizer }}>
             {children}
         </AuthContext.Provider>
     );

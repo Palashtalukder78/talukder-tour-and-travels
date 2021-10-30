@@ -13,6 +13,8 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddPackage from './components/AddPackage/AddPackage';
 import Register from './components/Register/Register';
 import ManagePackages from './components/ManagePackages/ManagePackages';
+import NotFound from './components/NotFound/NotFound';
+import Footer from './components/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -41,7 +43,11 @@ function App() {
           <PrivateRoute path="/manage-packages">
             <ManagePackages></ManagePackages>
           </PrivateRoute>
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
         </Switch>
+        <Footer />
       </Router>
     </AuthProvider>
   );

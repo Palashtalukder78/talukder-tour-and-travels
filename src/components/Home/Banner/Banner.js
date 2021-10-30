@@ -1,16 +1,18 @@
 import React from 'react';
-import './Banner.css'
+import { Link } from 'react-router-dom';
+import './Banner.css';
 const Banner = () => {
     return (
         <div className="banner">
             <div className="container">
-                <div className="row" style={{ paddingTop: "80px" }}>
-                    <div className="col-md-6 banner-content ">
-                        <div className="text-lg-end pt-5">
-                            <h4 style={{ fontSize: "40px", color: "rgb(27, 116, 0)" }}><b>Plan your</b></h4>
-                            <h3 style={{ fontSize: "60px", color: "rgb(2, 2, 77)", fontWeight: "700" }}>Road Trip</h3>
-                            <h4 style={{ fontSize: "40px", color: "rgb(1, 39, 39)" }}>Around the Glob</h4>
-                            <button className="btn btn-primary btn-lg">Contact Us</button>
+                <div className="row">
+                    <div className="col-md-12 banner-content" >
+                        <div className="text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: "column", height: "470px" }}>
+                            <h4 style={{ fontSize: "40px", color: "#fff" }}><b>Plan your</b></h4>
+                            <h3 style={{ fontSize: "50px", color: "#fff", fontWeight: "700", margin: "0" }}>Road Trip Around the Glob</h3>
+                            <Link to="/my-package">
+                                <button className="btn btn-lg btn-info text-dark mt-2">My Package</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

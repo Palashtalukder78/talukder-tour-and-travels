@@ -69,11 +69,7 @@ const ManagePackages = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {!registeredTourists?.length > 0 ?
-                                    <div className="my-spinner text-center">
-                                        <Spinner animation="border" variant="secondary" />
-                                    </div>
-                                    :
+                                {
                                     registeredTourists.map(registeredTourist => (
                                         <tr>
                                             <td>{registeredTourist.name}</td>
