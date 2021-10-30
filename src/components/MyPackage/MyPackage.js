@@ -18,7 +18,7 @@ const MyPackage = () => {
         swal("Do you want delete the User ?")
             .then(value => {
                 if (value) {
-                    const url = `http://localhost:5000/registered-tourist/${id}`;
+                    const url = `https://fathomless-anchorage-91551.herokuapp.com/registered-tourist/${id}`;
                     fetch(url, {
                         method: 'DELETE'
                     })

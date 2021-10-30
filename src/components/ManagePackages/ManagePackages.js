@@ -19,7 +19,7 @@ const ManagePackages = () => {
         swal("Do you want delete the User ?")
             .then((value) => {
                 if (value) {
-                    const url = `http://localhost:5000/registered-tourist/${id}`;
+                    const url = `https://fathomless-anchorage-91551.herokuapp.com/registered-tourist/${id}`;
                     fetch(url, {
                         method: 'DELETE'
                     })
@@ -33,7 +33,24 @@ const ManagePackages = () => {
             })
     }
     const handleOrderActive = (id) => {
-        console.log(id);
+        // const selectedTourist = registeredTourists.find(registeredTourist => registeredTourist._id === id);
+        swal("Do you want to active this User for the Package ?")
+            .then(value => {
+                if (value) {
+                    const url = `https://fathomless-anchorage-91551.herokuapp.com/registered-tourist/${id}`;
+                    fetch(url, {
+                        method: "PUT",
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(registeredTourists)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data);
+                        })
+                }
+            })
     }
     return (
         <div className="container">
@@ -65,7 +82,9 @@ const ManagePackages = () => {
                                             <td>{registeredTourist.status}</td>
                                             <td className="text-center">
                                                 <ButtonGroup aria-label="Basic example">
-                                                    <Button onClick={() => handleOrderActive(registeredTourist._id)} className="btn-sm" variant="primary">Active</Button>
+                                                    {registeredTourist?.status === 'Pending...' &&
+                                                        <Button onClick={() => handleOrderActive(registeredTourist._id)} className="btn-sm" variant="primary">Active</Button>
+                                                    }
                                                     <Button className="btn-sm" onClick={() => handlePackageDelete(registeredTourist._id)} variant="danger">
                                                         <i className="fas fa-trash-alt delete-btn"></i>
                                                     </Button>
