@@ -6,7 +6,7 @@ import WeOfferTheBest from '../WeOfferTheBest/WeOfferTheBest';
 
 const Home = () => {
     return (
-        <div>
+        <div style={{ overflowX: "hidden" }}>
             <Banner></Banner>
             <PackagesContainer></PackagesContainer>
             <WeOfferTheBest></WeOfferTheBest>

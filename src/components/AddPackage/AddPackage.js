@@ -47,9 +47,9 @@ const AddPackage = () => {
     }, []);
     return (
         <div>
-            <div className="container">
+            <div className="container" style={{ overflowX: "hidden" }}>
                 <div className="row pt-5">
-                    <div className="col-md-4" data-aos="fade-right" data-aos-delay="500">
+                    <div className="col-md-4 mb-3" data-aos="fade-right" data-aos-delay="500">
                         <div className="add-package-form">
                             <h2 className="text-center mb-3">Add Package</h2>
                             <form onSubmit={handleAddPackage}>

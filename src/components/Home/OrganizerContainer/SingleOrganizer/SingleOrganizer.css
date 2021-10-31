@@ -20,3 +20,21 @@
     height: 180px;
     border-radius: 10px;
 }
+
+@media screen and (max-width: 552px){
+    .single-organizer-photo img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    .single-organizer-content h3{
+        font-size: 20px;
+    }
+    .single-organizer-content h5{
+        font-size: 16px;
+    }
+    .single-organizer-content p{
+        font-size: 14px;
+        text-align: justify;
+    }
+}

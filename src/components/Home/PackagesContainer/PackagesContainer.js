@@ -13,7 +13,7 @@ const PackagesContainer = () => {
     }, []);
     return (
         <div>
-            <div className="container mt-4">
+            <div className="container mt-4" style={{ overflowX: "hidden" }}>
                 <h3 className="text-center section-title my-3">PACKAGES</h3>
                 <div className="row">
                     {!packages.length > 0 ?
