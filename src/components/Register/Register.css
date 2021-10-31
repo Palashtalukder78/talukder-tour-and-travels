@@ -19,3 +19,17 @@
     background-color: rgb(197, 165, 165);
     padding: 15px;
 }
+.selectedInfo{
+    border: 2px dotted gray;
+    padding: 20px;
+    border-radius: 40px 0 40px 0;
+}
+.selectedInfo img{
+    width: 65%;
+    height: 65%;
+    border-radius: 40px
+}
+.register-container{
+    align-items: center;
+    overflow-x: hidden;
+}

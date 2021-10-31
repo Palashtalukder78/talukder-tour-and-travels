@@ -3,7 +3,6 @@ import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import './Register.css';
-import tourPhoto from '../../images/vacation.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import swal from 'sweetalert';
@@ -32,6 +31,8 @@ const Register = () => {
     const selectPlaceRef = useRef();
     const actionRef = useRef();
     const photoRef = useRef();
+    // const priceRef = useRef();
+    const dateRef = useRef();
 
     const handleRegisteredTourist = (e) => {
         const name = nameRef.current.value;
@@ -42,9 +43,10 @@ const Register = () => {
         const place = selectPlaceRef.current.value;
         const photo = photoRef.current.value;
         const status = actionRef.current.value;
+        // const price = priceRef.current.value;
+        const date = dateRef.current.value;
 
-        const registeredInfo = { name: name, email: email, phone: phone, address: address, selectedpackage: selectedpackage, place: place, photo: photo, status: status }
-        console.log(registeredInfo);
+        const registeredInfo = { name: name, email: email, phone: phone, address: address, date: date, selectedpackage: selectedpackage, place: place, photo: photo, status: status }
 
         fetch('https://fathomless-anchorage-91551.herokuapp.com/registered-tourist', {
             method: "POST",
@@ -65,8 +67,8 @@ const Register = () => {
     }
     return (
         <Container>
-            <div className="row my-3">
-                <div className="col-md-5" data-aos="slide-right" data-aos-delay="300">
+            <div className="row my-3 register-container">
+                <div className="col-md-5 mb-2" data-aos="slide-right" data-aos-delay="300">
                     <div className="register-form">
                         <form onSubmit={handleRegisteredTourist}>
                             <div className="user-info">
@@ -75,6 +77,7 @@ const Register = () => {
                                 <input ref={emailRef} title="You can't change your Email Address" type="email" defaultValue={user.email} disabled />
                                 <input ref={phoneRef} type="number" placeholder="PhoneNumber" required />
                                 <input ref={addressRef} type="text" placeholder="Address" required />
+                                <input ref={dateRef} type="date" placeholder="Date Here" required />
 
                             </div>
                             <div className="package-info">
@@ -82,6 +85,7 @@ const Register = () => {
                                 <span className="text-center d-block mb-2">You can't change the Package details</span>
                                 <input ref={selectPackageRef} title="You can't changes Package details" type="text" defaultValue={selectedpackage.title} disabled />
                                 <input ref={selectPlaceRef} title="You can't changes Package details" type="text" defaultValue={selectedpackage.place} disabled />
+                                {/* <input ref={priceRef} title="You can't changes Package details" type="number" defaultValue={selectedpackage.price} disabled /> */}
                                 <input ref={photoRef} title="You can't changes Package details" type="hidden" defaultValue={selectedpackage.photo} />
                                 <input ref={actionRef} type="hidden" value="Pending..." />
                             </div>
@@ -92,8 +96,27 @@ const Register = () => {
                     </div>
                 </div>
                 <div className="col-md-7 mx-auto" data-aos="slide-left" data-aos-delay="500">
-                    <div className="text-center">
-                        <img style={{ width: "80%" }} className="img-fluid" src={tourPhoto} alt="" />
+                    <div>
+                        <div className="row">
+                            <div className="col-md-8 mx-auto">
+                                <div className="selectedInfo shadow">
+                                    <div className="text-center">
+                                        <img src={selectedpackage.photo} alt="" />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-center my-2">{selectedpackage.title}</h4>
+                                        <div>
+                                            <div className="place-duration my-2">
+                                                <h6 >{selectedpackage.place}</h6>
+                                                <h6 ><i class="fas fa-calendar-alt"></i> {selectedpackage.duration} Days</h6>
+                                            </div>
+                                        </div>
+                                        <p>{selectedpackage.description}</p>
+                                        <h4>Cost: ${selectedpackage.price}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

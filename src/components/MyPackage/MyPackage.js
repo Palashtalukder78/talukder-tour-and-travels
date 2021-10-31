@@ -50,6 +50,7 @@ const MyPackage = () => {
                                 <div>
                                     <h6>{singlePackage.selectedpackage}</h6>
                                     <p className="p-0 m-0">{singlePackage.place}</p>
+                                    <p className="p-0 m-0">Date: {singlePackage.date}</p>
                                     <span><b>{singlePackage.status}</b></span>
                                 </div>
                                 <div>

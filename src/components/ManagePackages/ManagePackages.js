@@ -64,6 +64,7 @@ const ManagePackages = () => {
                                     <th>Tourist</th>
                                     <th>Email</th>
                                     <th>Booked Package</th>
+                                    <th>Date</th>
                                     <th>Status</th>
                                     <th className="text-center">Action</th>
                                 </tr>
@@ -75,6 +76,7 @@ const ManagePackages = () => {
                                             <td>{registeredTourist.name}</td>
                                             <td>{registeredTourist.email}</td>
                                             <td>{registeredTourist.selectedpackage}, {registeredTourist.place}</td>
+                                            <td>{registeredTourist.date}</td>
                                             <td>{registeredTourist.status}</td>
                                             <td className="text-center">
                                                 <ButtonGroup aria-label="Basic example">

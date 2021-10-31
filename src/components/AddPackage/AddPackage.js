@@ -15,6 +15,7 @@ const AddPackage = () => {
     const placeRef = useRef();
     const durationRef = useRef();
     const descriptionRef = useRef();
+    const priceRef = useRef();
 
     const handleAddPackage = (e) => {
         const title = titleRef.current.value;
@@ -22,7 +23,8 @@ const AddPackage = () => {
         const place = placeRef.current.value;
         const duration = durationRef.current.value;
         const description = descriptionRef.current.value;
-        const newPackage = { title: title, photo: photo, place: place, duration: duration, description: description };
+        const price = priceRef.current.value;
+        const newPackage = { title: title, photo: photo, place: place, duration: duration, price: price, description: description };
 
         fetch('https://fathomless-anchorage-91551.herokuapp.com/add-package', {
             method: 'POST',
@@ -54,8 +56,9 @@ const AddPackage = () => {
                             <h2 className="text-center mb-3">Add Package</h2>
                             <form onSubmit={handleAddPackage}>
                                 <input ref={titleRef} type="text" placeholder="Package Title" />
-                                <input ref={placeRef} type="text" placeholder="Where it is" />
+                                <input ref={placeRef} type="text" placeholder="Destination" />
                                 <input ref={durationRef} type="number" placeholder="Enter Duration" />
+                                <input ref={priceRef} type="number" placeholder="Enter Price" />
                                 <input ref={photoRef} type="text" placeholder="Photo URL" />
                                 <textarea ref={descriptionRef} placeholder="Short Description" cols="30" rows="3"></textarea>
                                 <div className="d-grid">
