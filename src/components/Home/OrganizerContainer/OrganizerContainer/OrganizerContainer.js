@@ -11,7 +11,7 @@ const OrganizerContainer = () => {
         AOS.init();
     }, []);
     return (
-        <Container className="my-5" data-aos="fade-down" data-aos-delay="500">
+        <Container className="my-5" data-aos="fade-right" data-aos-delay="500">
             <h3 className="text-center section-title my-3">MEET OUR TRIP ORGANIZER</h3>
             <div className="row ">
                 {!organizers.length > 0 ?

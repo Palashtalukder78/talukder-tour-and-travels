@@ -1,10 +1,14 @@
 .footer{
     background-color: rgb(61, 61, 218);
+    border-radius: 35px 35px 0 0 ;
 }
 .social-icon a{
     font-size: 35px;
     margin: 10px;
     color: #fff;
+}
+.social-icon a:hover{
+    color: gray;
 }
 .footer-address{
     display: flex;

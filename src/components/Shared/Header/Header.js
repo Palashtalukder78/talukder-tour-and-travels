@@ -6,6 +6,7 @@ import { useHistory } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import logo from '../../../images/logo.png';
 import swal from 'sweetalert';
+import './Header.css'
 const Header = () => {
     const auth = getAuth();
     const history = useHistory();
@@ -38,25 +39,27 @@ const Header = () => {
                         }} >
                             HOME
                         </NavLink>
-                        <NavLink style={{ marginLeft: "23px", textDecoration: "none", color: "gray", fontSize: "16px" }} to="/my-package" activeStyle={{
-                            fontWeight: "bold",
-                        }} >
-                            MY PACKAGES
-                        </NavLink>
-                        {user?.photoURL &&
+                        {user?.displayName &&
                             <NavLink style={{ marginLeft: "23px", textDecoration: "none", color: "gray", fontSize: "16px" }} to="/add-package" activeStyle={{
                                 fontWeight: "bold",
                             }} >
                                 ADD PACKAGE
                             </NavLink>}
-                        {user?.photoURL &&
+                        {user?.displayName &&
+                            <NavLink style={{ marginLeft: "23px", textDecoration: "none", color: "gray", fontSize: "16px" }} to="/my-package" activeStyle={{
+                                fontWeight: "bold",
+                            }} >
+                                MY PACKAGES
+                            </NavLink>
+                        }
+                        {user?.displayName &&
                             <NavLink style={{ marginLeft: "23px", textDecoration: "none", color: "gray", fontSize: "16px" }} to="/manage-packages" activeStyle={{
                                 fontWeight: "bold",
                             }} >
-                                MANAGE  PACKAGES
-                            </NavLink>}
-
-                        {user?.photoURL ?
+                                MANAGE ALL PACKAGES
+                            </NavLink>
+                        }
+                        {user?.displayName ?
                             <div style={{ display: "flex", alignItems: "center" }}>
                                 <img className="img-fluid" style={{ width: "40px", height: "40px", borderRadius: "50%", marginLeft: "23px" }} src={user?.photoURL} alt="" />
                                 <i onClick={handleLogout} title="Logout" style={{ marginLeft: "23px", fontSize: "20px", backgroundColor: "blue", padding: "7px", color: "#fff", borderRadius: "20%", cursor: "pointer" }} class="fas fa-sign-out-alt"></i>

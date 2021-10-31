@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Spinner } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import SinglePackage from '../SinglePackage/SinglePackage';
-import './PacakagesContainer.css'
+import './PacakagesContainer.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const PackagesContainer = () => {
     const { allPackage } = useAuth();
     const { packages } = allPackage;
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
         <div>
-            <div className="container my-4">
+            <div className="container mt-4">
                 <h3 className="text-center section-title my-3">PACKAGES</h3>
                 <div className="row">
                     {!packages.length > 0 ?
